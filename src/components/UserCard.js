@@ -3,6 +3,7 @@ import './style.css';
 
 function UserCard (props) {
 const {user:{full_name:fullname,html_url:url,description,name}, user:{owner: {avatar_url:avurl}}} = props;
+console.log("props",props);
 return (
        <div className="card-wrapper">
       <img src={avurl} className="user-img"/> 
