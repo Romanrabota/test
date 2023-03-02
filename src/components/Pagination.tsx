@@ -1,7 +1,16 @@
 import React from 'react';
+import { FC } from "react";
 import './style.css';
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+interface PaginationProps {
+  postsPerPage: number;
+  totalPosts: number;
+  paginate: (pageNumber: number) => void;
+}
+
+
+
+const Pagination:FC<PaginationProps> = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
