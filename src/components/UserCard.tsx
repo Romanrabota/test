@@ -1,7 +1,7 @@
 import './style.css';
 import { user } from "../types";
 import { FunctionComponent} from "react";
-
+import {Cardwrapper,Name,Userimg,Description} from "./style"
 
 interface CardProps  {
       user:user
@@ -10,12 +10,18 @@ interface CardProps  {
      export const UserCard: FunctionComponent<CardProps> =({user})=>{
 
      return (
-       <div className="card-wrapper">
-      <img src={user.owner.avatar_url} className="user-img"/> 
-        <h2><div className="name"> {user.full_name} </div></h2> 
+    /*  { <div className="card-wrapper"> }*/
+     
+     <div>
+      <Cardwrapper>
+      
+      <Userimg src={ user.owner.avatar_url} /> 
+        <h2> <Name><div> {user.full_name} </div></Name></h2> 
         <p>{user.html_url}</p>
-        <p>{user.description}</p>
-       </div> 
+        <p> <Description>{user.description}</Description></p>
+        </Cardwrapper>
+        </div>
+      /* {  </div> }*/
 ) 
 }
 /*function UserCard (props) {

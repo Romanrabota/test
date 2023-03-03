@@ -3,8 +3,8 @@ import {getUsers}  from  '../api';
 import UserCard  from  "./UserCard";
 import Pagination from './Pagination';
 import './style.css';
-import { user} from "../types";
-
+import {user} from "../types";
+import {Cardcontainer,Input,Inputdiv} from "./style"
 
 interface UserListProps {
   user?: user[];
@@ -15,7 +15,8 @@ interface UserListProps {
   const UserList: FC<UserListProps> =({user})=>{
   const [users,setUsers] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [postsPerPage] = useState<number>(9);
+  const [postsPerPage] = useState<number>(10);
+
 
 
 
@@ -52,30 +53,33 @@ const renderUsers = () => {
  let indexOfLastPost = currentPage * postsPerPage;
  let indexOfFirstPost = indexOfLastPost - postsPerPage;
 
-
+ 
 
 return  filteredUsers.slice(indexOfFirstPost, indexOfLastPost).map((user)=> <UserCard user={user} key={user.id}/>)
+
 
 }
 
 
-
-
 return (
  <>
+
   <h1>Hello</h1>
- <div className="input"> <input type="text"
+  <Inputdiv>
+ <Input type="text"
   onChange={(event)=>setValue(event.target.value)} 
-  /></div>
- <section  className="card-container"> {renderUsers()}</section> 
+  /></Inputdiv>
+ {/*<section  className="card-container"> {renderUsers()}</section> */}
+  <section> <Cardcontainer>{renderUsers()}</Cardcontainer></section>
  <Pagination
        postsPerPage={postsPerPage}
        totalPosts={users.length}
        paginate={paginate}
      />
+     
  </>
  )
- }
+}
 
 
 

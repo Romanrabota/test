@@ -1,6 +1,7 @@
 import React from 'react';
 import { FC } from "react";
 import './style.css';
+import { Paginationdesign} from "./style"
 
 interface PaginationProps {
   postsPerPage: number;
@@ -19,7 +20,7 @@ const Pagination:FC<PaginationProps> = ({ postsPerPage, totalPosts, paginate }) 
 
   return (
     <nav>
-      <div className='pagination'>
+      <Paginationdesign>
         {pageNumbers.map(number => (
           <div key={number} className='page-item'>
             <a onClick={() => paginate(number)} href='!#' className='page-link'>
@@ -27,7 +28,7 @@ const Pagination:FC<PaginationProps> = ({ postsPerPage, totalPosts, paginate }) 
             </a>
           </div>
         ))}
-      </div>
+      </Paginationdesign>
     </nav>
   );
 };
