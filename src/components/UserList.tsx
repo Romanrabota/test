@@ -2,7 +2,6 @@ import React, {useState,useEffect,FC}  from "react";
 import {getUsers}  from  '../api';
 import UserCard  from  "./UserCard";
 import Pagination from './Pagination';
-import './style.css';
 import {user} from "../types";
 import {Cardcontainer,Input,Inputdiv} from "./style"
 
@@ -63,13 +62,10 @@ return  filteredUsers.slice(indexOfFirstPost, indexOfLastPost).map((user)=> <Use
 
 return (
  <>
-
-  <h1>Hello</h1>
   <Inputdiv>
  <Input type="text"
   onChange={(event)=>setValue(event.target.value)} 
   /></Inputdiv>
- {/*<section  className="card-container"> {renderUsers()}</section> */}
   <section> <Cardcontainer>{renderUsers()}</Cardcontainer></section>
  <Pagination
        postsPerPage={postsPerPage}
