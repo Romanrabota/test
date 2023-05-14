@@ -7,6 +7,7 @@ export const Cardcontainer = styled.div`
 display: flex;
 width: 100%;
 flex-flow:row wrap;
+justify-content:center;
 
 @media(max-width:414px){
     display : flex;
@@ -103,9 +104,4 @@ width: 25px;
 export const Pagelink  = styled.div`
 
     color: grey;
-  
-
-   
-  
-
 ` 
